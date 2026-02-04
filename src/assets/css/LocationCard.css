@@ -1,0 +1,91 @@
+.location-card-container {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  transition: transform 0.5s ease !important;
+  overflow: hidden;
+  background-color: blueviolet !important;
+}
+.location-image {
+    opacity: 1;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  
+  
+}
+.location-name {  
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-size: 28px !important;
+  font-weight: 700 !important;
+}
+
+.location-info {
+  position: absolute;
+  inset:0;/*riempie tutta la card*/
+  opacity: 0;
+  color: white;
+  font-size: 18px !important;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease !important;
+}
+
+.location-info-name {
+  position: absolute; 
+  top: 15px;
+  left : 20px;
+    font-size: 28px !important;
+    font-weight: bold !important;
+}
+
+.location-info-activities{
+  position: absolute; 
+  bottom: 20px;
+  left : 20px;
+  font-size: 16px !important;
+  text-align: left;
+  
+}
+.location-info-activities-number{
+  font-weight: bold !important;
+  font-size: 24px !important;
+  margin-bottom: -10px !important;
+}
+.location-info-valuation{
+  position: absolute; 
+  bottom: 20px;
+  left: 170px;
+  text-align: left;
+  
+  
+}
+.location-info-valuation-number{
+  font-weight: bold !important;
+  font-size: 24px !important;
+  margin-bottom: -8px !important;
+}
+.location-info-reviews{
+  position: absolute; 
+  top: 75px;
+  left: 170px; 
+  text-align: left;
+}
+.location-info-reviews-number{
+  font-weight: bold !important;
+  font-size: 24px !important;
+  margin-bottom: -10px !important;
+}
+.location-card-container:hover .location-image {
+  opacity: 0 !important;
+  
+}
+.location-card-container:hover .location-info {
+  opacity: 1 !important;
+  transform: translateY(0);
+  
+}

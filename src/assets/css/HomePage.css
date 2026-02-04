@@ -1,0 +1,66 @@
+.background-homepage {
+  width:100vw;
+ 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  background-color: #f4f3f3;
+}
+.main-search-box {
+  width: 100%;
+  margin-top: 100px;
+}
+
+.content {
+  width: 95%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: inherit;
+  margin-top: 20px;
+  gap: 20px;
+  margin-right: 2px;
+}
+
+.name-section{
+  font-size: 35px !important;
+  color: #010101;
+  font-weight: lighter!important;
+}
+
+/*.box-main-destination{
+  width: 100%;
+  height: 430px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: inherit;
+  overflow: hidden;
+  
+}*/
+.box-main-destination {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-auto-rows: 200px;
+  justify-content: center;
+  gap: 26px;
+}
+
+.box-best-activity{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+
+
+
