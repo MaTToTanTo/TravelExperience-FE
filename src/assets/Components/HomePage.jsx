@@ -6,6 +6,7 @@ import MainSearch from './MainSearch';
 import LocationCard from './LocationCard';
 import ActivityCard from './ActivityCard';
 import Navbar from './Navbar';
+import {Link} from "react-router-dom";
 
 function HomePage() {
   
@@ -72,8 +73,12 @@ function HomePage() {
              {/*MIGLIORI ESPERIENZE*/}
             <Box className="box-best-activity">
             {/*mettere card Esperienze*/}
-              {bestActivityArray.map((activity, index) => (
-                <ActivityCard key={index} activity={activity} />
+              {bestActivityArray.map((activity) => (
+                <Link key={activity.id} to={"/activity/${activity.id}"}>{/*key va messo sul primo elemento del map, quindi Link e all'interno del Link c'è il componente card*/}
+                <ActivityCard
+                 activity={activity}
+                 />
+                 </Link>
               ))}
             </Box>
           </Box>

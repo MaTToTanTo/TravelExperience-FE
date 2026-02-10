@@ -1,0 +1,15 @@
+.sticky-container{
+    
+    max-width: 100%;
+    width: 380px;
+    min-height: 445px;
+    background-color: rgb(101, 98, 98);
+    border-radius: 10px !important;
+    z-index: 10;
+}
+@media (max-width : 900px) {
+ .sticky-container {
+    position:static;
+    width: 100%;
+ }
+}

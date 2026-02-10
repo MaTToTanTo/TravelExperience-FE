@@ -1,14 +1,22 @@
 import { use, useEffect,useState,useRef } from "react";
 import "../css/Navbar.css";
-import { Box, Typography,AppBar,Button,Select } from "@mui/material";
+import { Box, Typography,AppBar,Button,Select, MenuItem,InputBase,IconButton } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
+import SearchIcon from '@mui/icons-material/Search';
 
 function Navbar() {
     const [isHomepage, setIsHomepage] = useState(true);
     const [tempSearch, setTempSearch] = useState("");
     const [search, setSearch] = useState("");
     const inputRef = useRef(null);
-    const location = useLocation();
+    const location = useLocation();//per trovare il path dall'url
+    const [language, setLanguage] = useState("Italiano");
+    const languageList =["Italiano", "English","French","Japan"]
+    
+
+    const HandleLanguage = (e) => {
+        setLanguage(e.target.value)
+    }
 
     
     useEffect(() => {
@@ -33,7 +41,8 @@ return (
                 <Box className="navbar-logo">
                     <Typography component={Link} to="/" className="navbar-logo-text">
                         LOGO
-                    </Typography>               
+                    </Typography> 
+                    <Typography component={Link} to="/linkprovaactivitypage" sx={{color:"white"}}>paginaProva</Typography>            
                 </Box>
                 {/* barra di ricerca solo se non si è in homepage*/}
                 {!isHomepage && (
@@ -54,14 +63,32 @@ return (
                 <Box className="nav-right-box">
                     <Select className="nav-language"
                         name="Language"
+                        variant="outlined"
+                        sx={{
+                            "& .MuiOutlinedInput-notchedOutline": {
+                            border: "none",
+                            },
+                            "&:hover .MuiOutlinedInput-notchedOutline": {
+                            border: "none",
+                            },
+                            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                            border: "none",
+                            },
+                        }}
+                        displayEmpty
+                        value={language}
+                        onChange={HandleLanguage}
                         >
                         {/*value={} onChange={funzione handle}*/} 
-                        {/*fare map con le opzioni e probabilmente utilizzare MenuItem come componente*/}
+                        {languageList.map((option) => (
+                            <MenuItem key={option} value={option}>{option}</MenuItem>   
+                        ))}
+                        
                     </Select>
 
                     <Button className="login-button">
                     {/*onClick={funzione di login}*/}
-                        Accedi
+                     Accedi
                     </Button>
 
 

@@ -80,12 +80,13 @@
 .search-button {
   width: 55px !important;
   height: 55px !important;
-  background-color: rgb(193, 193, 193) !important;
+  background-color:#f47520 !important;
   
 }
 
 .search-icon {
     font-size:30px !important;
+    color: #fff;
     
     
 }
