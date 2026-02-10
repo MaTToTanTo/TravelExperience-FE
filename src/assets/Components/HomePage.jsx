@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { Box,Paper,Button,Typography, InputBase, IconButton } from '@mui/material'
+import { Box,Paper,Button,Typography, InputBase, IconButton, Divider } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
 import '../css/HomePage.css'
 import MainSearch from './MainSearch';
@@ -23,7 +23,7 @@ function HomePage() {
 
   const bestActivityItem = {
               name: "Lorem ipsum dolor sit amet, consectetur",
-              imageUrl: "/parisimage.jpg",
+              imageUrl: "/img3.jpg",
               price: 0,
               valuation: 0,
               hours: 0,
@@ -67,6 +67,7 @@ function HomePage() {
              ))}
              
             </Box>
+            <Divider />
             <Typography className="name-section">
             Best Experiences
             </Typography>
@@ -81,6 +82,7 @@ function HomePage() {
                  </Link>
               ))}
             </Box>
+            <Divider />
           </Box>
           
           <Box className="footer">  

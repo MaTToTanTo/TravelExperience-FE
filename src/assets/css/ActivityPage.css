@@ -33,7 +33,9 @@
 }
 @media (max-width: 900px) {
   .sticky-wrapper {
+    position :relative;
     margin-top: 0;
+    top:0;
     justify-content: center;
     margin-right: 10px;
   }

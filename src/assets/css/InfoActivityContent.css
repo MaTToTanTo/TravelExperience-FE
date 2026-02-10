@@ -27,6 +27,8 @@
     flex-direction: column;
     gap:20px;
 }
+
+
 .description{
     font-size: 18px !important;
     color: rgb(79, 78, 78) !important;
