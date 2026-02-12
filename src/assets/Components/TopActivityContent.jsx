@@ -5,22 +5,11 @@ import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutl
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 
 
-function TopActivityContent(){
+function TopActivityContent({activityItem}){
     
     const [currentImageIndex,setCurrentImageIndex] = useState(0);
 
-    const activityItem = {
-              title: "Lorem ipsum dolor sit amet, consectetur",
-              imageUrl: "/parisimage.jpg",
-              country: "Country",
-              location: "Location",
-              price: 0,
-              valuation: 0,
-              hours: 0,
-              reviews: 0,
-              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris."
-              };
-              const imageList = [
+    const imageList = [
                     '/img1.jpg',
                     '/img2.jpg',
                     '/img3.jpg',

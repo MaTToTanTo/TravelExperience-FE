@@ -38,6 +38,8 @@ const HttpGet = async (endpoint) => {
         throw error;
     }
 }
+
+
 const HttpPost = async (endpoint, data) => {
     try {
         let tokenResponse;
@@ -64,6 +66,7 @@ const HttpPost = async (endpoint, data) => {
         throw error;
     }
 };
+
 
 const HttpPut = async (url, data) => {
         try {

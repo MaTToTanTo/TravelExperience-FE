@@ -12,31 +12,39 @@ import { MsalProvider } from '@azure/msal-react'
 import { msalConfig } from './assets/AuthConfig';
 import { PublicClientApplication } from '@azure/msal-browser'
 import { ApiProvider } from './assets/Store/ApiContext'
-
+import SearchingPage from './assets/Components/SearchingPage'
+import RootLayout from './assets/Components/RootLayout'
 
 
 const msalInstance = new PublicClientApplication(msalConfig);
 const router = createBrowserRouter([
+  
   {
     path: "/",
-    element: <HomePage />,
-  },
-  /*{
-    path:"/activity/:id",
-    element:<ActivityPage />,
-  },*/
-  {
-    path:"/linkprovaactivitypage",
-    element:<ActivityPage />
-  }
-])
+    element:<RootLayout />,
+    children:[
+      {
+        index: true,//per indicare che è la route di default
+        element: <HomePage />,
+      },
+      {
+        path:"/activity/:id",
+        element:<ActivityPage />,
+      },
+      {
+        path:"/linkprovaactivitypage",
+        element:<SearchingPage />
+      }
+    ]
+    }
+  ])
 
 createRoot(document.getElementById('root')).render(
   <MsalProvider instance={msalInstance}>
     <ThemeProvider theme={theme}>
       <CssBaseline />
         <ApiProvider>
-          <DataProvider>
+          <DataProvider>           
             <RouterProvider router={router} />
           </DataProvider>
         </ApiProvider>

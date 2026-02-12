@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect,useContext } from "react";
 import "../css/ActivityPage.css";
 import Navbar from "./Navbar";
 import { useParams } from "react-router-dom";
@@ -6,31 +6,42 @@ import TopActivityContent from "./TopActivityContent";
 import { Typography,Box } from "@mui/material";
 import BookingStickyForm from "./BookingStickyForm";
 import InfoActivityContent from "./InfoActivityContent";
+import { dataContext } from "../Store/DataContent";
 
 
 function ActivityPage(){
-    /*
-    const {id} = useParams(); per trovare id
-    const {activity} = getById(id); prende l'activity singola nella lista activity sul context tramite id(getById da implementare sul context)
-    questo per aprire la pagina del dettaglio dall'id dell'url passato dal map delle activity della mainpage*/
+    const {activityList} = useContext(dataContext);
+    const {id} = useParams(); //per trovare id
+   // const activity = activityList.find(activity => activity.id === id); //prende l'activity singola nella lista activity sul context tramite id(getById da implementare sul context)questo per aprire la pagina del dettaglio dall'id dell'url passato dal map delle activity della mainpage*/
 
-    const ActivityItem = {
-              name: "Lorem ipsum dolor sit amet, consectetur",
+    /*useEffect(()=>{
+        if(!activity){
+            getactivityById(id);//fetch dell'activity tramite id da implementare sul context, se non c'è già nella lista activity del context, altrimenti prendere direttamente l'activity dalla lista activity del context tramite id
+        }
+    },[id]);*/
+
+    const activityItem = {
+              id : 1234,
+              title: "Lorem ipsum dolor sit amet, consectetur",
               imageUrl: "/parisimage.jpg",
-              price: 0,
-              valuation: 0,
-              hours: 0,
-              reviews: 0,
-              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris."
-              };
+              country: "Country",
+              location: "Location",
+              price: 35,
+              valuation: 8,
+              hours: 8,
+              reviews: 211150,
+              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.",
+              details :["Item","Item","Item","Item","Item","Item"],
+            };
+              
 
     return (
         <>
-        <Navbar/>
+
         <Box className="page-container">
             <Box className="box-content">
                 <Box className="top-content">
-                    <TopActivityContent/>
+                    <TopActivityContent activityItem={activityItem} />
                 </Box>
 
                 <Box className="sticky-wrapper">
@@ -38,7 +49,7 @@ function ActivityPage(){
                 </Box>
 
                 <Box className="middle-content">
-                    <InfoActivityContent/>
+                    <InfoActivityContent activityItem={activityItem} />
 
                 </Box>
                 <Box className="bottom-content">

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState,useContext } from 'react'
 import { Box,Paper,Button,Typography, InputBase, IconButton, Divider } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
 import '../css/HomePage.css'
@@ -7,9 +7,11 @@ import LocationCard from './LocationCard';
 import ActivityCard from './ActivityCard';
 import Navbar from './Navbar';
 import {Link} from "react-router-dom";
+import { dataContext } from '../Store/DataContent';
 
 function HomePage() {
   
+  const {activityList, setActivityList,user, setUser} = useContext(dataContext);
   const [mainDest,  setMainDest] = useState([]);
   const [bestActivity, setBestActivity] = useState([]);
   const mainDestItem = {
@@ -22,14 +24,17 @@ function HomePage() {
   const mainDestArray = Array.from({length: 8}, () => ({...mainDestItem}));
 
   const bestActivityItem = {
+              id : 1234,
               name: "Lorem ipsum dolor sit amet, consectetur",
               imageUrl: "/img3.jpg",
               price: 0,
               valuation: 0,
               hours: 0,
               reviews: 0,
-              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris."
-              };
+              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.",
+              details :["Item","Item","Item","Item","Item","Item"],
+    };
+            
   const bestActivityArray = Array.from({length: 8}, () => ({...bestActivityItem}));
   
   useEffect(()=>{
@@ -39,7 +44,7 @@ function HomePage() {
     };
     const GetBestActivity = async () =>{
       //const data = await HttpGet("/bestactivities"); da sistemare con la chiamata giusta
-      //setBestActivity(data);
+      //setActivityList(data);
     };
     GetMainDestination();
     GetBestActivity();
@@ -49,7 +54,6 @@ function HomePage() {
     <>
       
         <Box className="background-homepage">
-          <Navbar />{ /*inserire componente Navbar*/}
           
           <Box className="main-search-box">
             <MainSearch />{ /*inserire componente MainSearch*/}           
@@ -74,11 +78,12 @@ function HomePage() {
              {/*MIGLIORI ESPERIENZE*/}
             <Box className="box-best-activity">
             {/*mettere card Esperienze*/}
-              {bestActivityArray.map((activity) => (
-                <Link key={activity.id} to={"/activity/${activity.id}"}>{/*key va messo sul primo elemento del map, quindi Link e all'interno del Link c'è il componente card*/}
+              {bestActivityArray.map((activity) => (//cambiare in activityList dal context quando sarà popolato con la chiamata al backend
+                <Link key={activity.id} 
+                to={"/activity/${activity.id}"}>{/*key va messo sul primo elemento del map, quindi Link e all'interno del Link c'è il componente card*/}
                 <ActivityCard
-                 activity={activity}
-                 />
+                activity={activity} />          
+                 
                  </Link>
               ))}
             </Box>

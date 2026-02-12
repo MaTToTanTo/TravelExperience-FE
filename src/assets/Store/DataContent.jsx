@@ -60,11 +60,12 @@ const emptyUser = {
 
 const [user, setUser] = useState(emptyUser);
 const [experience, setExperience] = useState(initialExperience);
+const [activityList, setActivityList] = useState([]);
 
 
 
     return(
-    <dataContext.Provider value={{experience, setExperience,user, setUser}}>
+    <dataContext.Provider value={{experience, setExperience,user, setUser,activityList, setActivityList}}>
         {children}
     </dataContext.Provider>
 )

@@ -3,8 +3,11 @@ import "../css/Navbar.css";
 import { Box, Typography,AppBar,Button,Select, MenuItem,InputBase,IconButton } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import SearchIcon from '@mui/icons-material/Search';
+import { useMsal } from "@azure/msal-react";
+import { AuthenticatedTemplate,UnauthenticatedTemplate } from "@azure/msal-react";
 
 function Navbar() {
+    const { instance, accounts } = useMsal();
     const [isHomepage, setIsHomepage] = useState(true);
     const [tempSearch, setTempSearch] = useState("");
     const [search, setSearch] = useState("");
@@ -86,11 +89,14 @@ return (
                         
                     </Select>
 
-                    <Button className="login-button">
-                    {/*onClick={funzione di login}*/}
+                    <UnauthenticatedTemplate>
+                    <Button className="login-button"
+                    onClick={instance.loginPopup}
+                    >
+                    
                      Accedi
                     </Button>
-
+                    </UnauthenticatedTemplate>
 
                 </Box>
             </Box>
