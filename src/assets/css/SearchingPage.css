@@ -1,0 +1,102 @@
+.searching-page-background{
+    width: 100vw;
+    min-height: 100vh; 
+    display: flex;
+   justify-content: center;  
+}
+
+.searching-content-container{
+    width: 95%;
+    height: 100%;
+    max-width: 1280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: inherit;
+    margin-top: 100px;
+    gap: 40px;
+}
+.searching-header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: inherit;
+    justify-content: center;
+    align-items: center;
+    gap : 10px;
+}
+.searching-title-box{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+    padding: 10px 20px;   
+}
+.searching-title{
+    font-size: 28px !important;
+    font-weight: 500 !important;
+    color:rgb(79, 78, 78) !important;
+}
+.searching-filter-header-box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+}
+.select-orderFor{
+    width: 130px;
+    height: 45px;
+    border-radius: 30px !important;
+    background-color: inherit;
+    border: 1px solid rgb(79, 78, 78) !important;
+    font-size: 14px !important;
+    color: rgb(79, 78, 78) !important;;
+}
+.item{
+    font-size: 14px !important;
+    color: rgb(79, 78, 78) !important;
+}
+.left-filter-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+.filter-item{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 12px;
+    font-size: 14px !important;
+    color: rgb(255, 255, 255) !important;
+    background-color: rgb(162, 161, 161) !important;
+    border-radius: 30px !important;
+}
+.searching-body{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: inherit;
+    justify-content: space-between;
+    align-items: center;
+    gap:20px;
+}
+.searching-empty-left-box{
+    width: 300px;
+    height: 400px;
+    background-color: rgb(162, 161, 161);
+}
+.searching-results{
+    width: 100%;
+    height: 400px;
+    background-color: rgb(108, 107, 107);
+}
+
+@media (max-width:900px{
+    
+})
