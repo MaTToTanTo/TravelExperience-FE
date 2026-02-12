@@ -31,6 +31,7 @@ function ActivityPage(){
               hours: 8,
               reviews: 211150,
               description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.",
+              information: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor.",
               details :["Item","Item","Item","Item","Item","Item"],
             };
               
