@@ -6,6 +6,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { useMsal } from "@azure/msal-react";
 import { AuthenticatedTemplate,UnauthenticatedTemplate } from "@azure/msal-react";
 
+
 function Navbar() {
     const { instance, accounts } = useMsal();
     const [isHomepage, setIsHomepage] = useState(true);

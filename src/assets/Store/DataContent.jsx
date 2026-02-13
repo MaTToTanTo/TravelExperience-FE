@@ -58,6 +58,20 @@ const emptyUser = {
   }
 };
 
+const bestActivityItem = {
+              id : 1234,
+              name: "Lorem ipsum dolor sit amet, consectetur",
+              imageUrl: "/img3.jpg",
+              price: 0,
+              valuation: 0,
+              hours: 0,
+              reviews: 0,
+              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.",
+              details :["Item","Item","Item","Item","Item","Item"],
+    };
+            
+  const bestActivityArray = Array.from({length: 8}, () => ({...bestActivityItem}));
+
 const [user, setUser] = useState(emptyUser);
 const [experience, setExperience] = useState(initialExperience);
 const [activityList, setActivityList] = useState([]);
@@ -65,7 +79,7 @@ const [activityList, setActivityList] = useState([]);
 
 
     return(
-    <dataContext.Provider value={{experience, setExperience,user, setUser,activityList, setActivityList}}>
+    <dataContext.Provider value={{experience, setExperience,user, setUser,activityList, setActivityList,bestActivityArray}}>
         {children}
     </dataContext.Provider>
 )
